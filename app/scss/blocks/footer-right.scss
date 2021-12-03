@@ -1,0 +1,11 @@
+.footer-right__item {
+    min-height: 75px;
+    background-color: grey;
+    margin-bottom: 30px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    @media (min-width: $tablet-width) {
+        margin-bottom: 60px;
+    }
+}

@@ -1,0 +1,19 @@
+.footer-left {
+    background-color: grey;
+    color: $basic-white;
+    padding: 18px 0;
+    padding-left: 26px;
+    box-sizing: border-box;
+}
+
+.footer-left__list {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.footer-left__wrapper {
+    margin-right: 74px;
+    &:last-child {
+        margin-right: 0;
+    }
+}

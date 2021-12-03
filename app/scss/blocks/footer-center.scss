@@ -1,0 +1,26 @@
+.footer-center {
+    background-color: $grey;
+    box-sizing: border-box;
+    padding: 18px 0;
+}
+
+.footer-center__item {
+    padding-left: 38px;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 8px;
+        height: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 26px;
+        background-color: $basic-white;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.footer-center__link {
+    color: $basic-white;
+}

@@ -1,0 +1,33 @@
+.footer {
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+.footer__container {
+    @media (min-width: $tablet-width) {
+        display: flex;
+    }
+    @media (min-width: $desktop-width) {
+        justify-content: space-between;
+    }
+}
+
+.footer__item {
+    @media (max-width: $mobile-width-only) {
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    @media (min-width: $tablet-width) {
+        margin-right: 10px;
+        width: 33%;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    @media (min-width: $desktop-width) {
+        width: 297px;
+        margin-right: 0;
+    }
+}
