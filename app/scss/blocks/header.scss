@@ -3,9 +3,10 @@
     min-height: 80px;
     @media (min-width: $tablet-width) {
         min-height: 151px;
-    }
-    &--nojs, &--opened {
-        padding-bottom: 270px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -21,16 +22,23 @@
 
 .header__container {
     display: block;
-    flex-wrap: wrap;
-    position: relative;
     align-items: center;
+    @media (min-width: $tablet-width) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 540px;
+    }
+    @media (min-width: $desktop-width) {
+        width: 820px;
+    }
 }
 
 .header__toggle {
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 3px;
+    top: 23px;
     right: 23px;
     z-index: 2;
     display: block;
@@ -39,22 +47,25 @@
     background-color: transparent;
     cursor: pointer;
     border: none;
-  
+    
     @media (min-width: $tablet-width) {
       display: none;
     }
 }
 
-.header--closed .header__toggle::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 24px;
-    height: 4.0px;
-    background-color: $grey;
-    box-shadow: 0 9px 0 0 $grey, 0 18px 0 0 $grey;
-    border-radius: 50px;
+.header--closed .header__toggle {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 4.0px;
+        background-color: $grey;
+        box-shadow: 0 9px 0 0 $grey, 0 18px 0 0 $grey;
+        border-radius: 50px;
+        display: block;
+    }
 }
 .header--closed .header__container {
     @media (max-width: $mobile-width-only) {
@@ -64,43 +75,51 @@
 .header--opened .header__nav {
     @media (max-width: $mobile-width-only) {
         margin-bottom: 32px;
+        width: 100%;
     }
 }
-.header--opened .header__togle {
-    // &::before,
-    // &::after {
-    //     content: "";
-    //     position: absolute;
-    //     top: 7px;
-    //     left: 0;
-    //     width: 24px;
-    //     height: 4px;
-    //     background-color: $grey;
-
-    // }
-    // &::before {
-    //     transform: rotate(45deg);
-    // }
-    // &::after {
-    //     transform: rotate(-45deg);
-    // }
+.header--opened .header__toggle {
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 0;
+        width: 24px;
+        height: 4px;
+        background-color: $grey;
+        box-shadow: none;
+    }
+    &::before {
+        transform: rotate(45deg);
+    }
+    &::after {
+        transform: rotate(-45deg);
+    }
 }
 
 .header--opened .header__container {
     @media (max-width: $mobile-width-only) {
-        margin-bottom: 36px;
         width: 100%;
+        box-sizing: border-box;
+        padding-top: 32px;
     }
 }
 
-.header--opened a,
-.header--nojs a {
+.header__contacts a {
+    color: $basic-white;
+    text-decoration: underline;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+    text-align: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
     @media (max-width: $mobile-width-only) {
         color: $basic-white;
         text-align: center;
         padding-top: 12px;
         padding-bottom: 12px;
-        display: block;
     }
     &:hover {
         color: tomato;
@@ -110,11 +129,13 @@
     }
 }
 
-// .header--opened .header
 .header__link {
     background-color: $grey;
     width: 122px;
     min-height: 106px;
+    @media (max-width: $mobile-width-only) {
+        margin: 0 auto;
+    }
 }
 
 .header__nav {
@@ -123,6 +144,7 @@
     min-height: 106px;
     @media (min-width: $tablet-width) {
         width: 200px;
+        min-height: 106px;
     }
     @media (min-width: $desktop-width) {
         width: 278px;
@@ -131,9 +153,10 @@
 
 .header__contacts {
     background-color: $grey;
-    width: 40%;
+    width: 100%;
     @media (min-width: $tablet-width) {
         width: 300px;
+        min-height: 106px;
     }
     @media (min-width: $desktop-width) {
         width: 513px;
